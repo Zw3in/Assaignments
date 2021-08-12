@@ -1,0 +1,54 @@
+[Program Description] 
+
+This program tracks the exam scores of the students.
+ All students have a unique number (ID) identifying them. Some students may have no exam score values yet,
+ and their score values may be updated later.
+ The program also supports student groups where students in a single group can be sorted by a different attribute.
+
+ (1) The Student class represents a student having the following three attributes:
+ (i) ID: The student’s identification 
+ (ii) name: The student’s name
+ (iii) score: The exam score value. If no score value is available, a value of -1.0 is applied. 
+
+The class has two constructors. One takes all attributes specified by the parameters. 
+The other takes only the ID and name attributes specified by the parameters,and -1.0 is used as its score value 
+indicating that this student has not yet taken the exam, or that the score value is not yet available.
+The withScore method returns a new Student instance created with the ID and name of this Student and
+ the specified new score value.
+(2) The StudentGroup class represents a group of students. 
+
+The constructor creates an instance with the specified capacity that is the maximum number of students
+the instance can record. 
+Students can be added to a StudentGroup by calling the addStudents method.
+The score value of a particular student can be updated by calling the updateScore method. 
+
+The sort method sorts the students in the specified order.
+
+The SortOrder enum defines the constants to specify what Student attribute to use for sorting the students in StudentGroup.
+
+The enum implements the Comparator interface so that the sort method of StudentGroup can invoke the compare method to collate two students.
+The constants are as follows:
+BY_ID : specifies the ID attribute to be used for sorting in ascending order.
+BY_NAME :  specifies the name attribute to be used for sorting in ascending order. The case-insensitive comparison is performed.
+BY_SCORE : specifies the score attribute to be used for soring in descending order.
+
+(4) The StudentGroupTester class tests the above classes and enum.
+ The following output is produced by executing the main method of StudentGroupTester. 
+
+Sorted by SCORE: 
+(111, Abco, 100.0) 
+(444, Cdef, 70.0) 
+(222, Ghio, 0.0) 
+(333, Jokl, no score) 
+
+Sorted by NAME: 
+(111, Abco, 100.0) 
+(444, Cdef, 70.0) 
+(222, Ghio, 0.0)
+(333, Jokl, no score) 
+
+Sorted by ID: 
+(111, Abco, 100.0)
+(222, Ghio, 0.0) 
+(333, Jokl, no score)
+(444, Cdef, 70.0)

@@ -1,0 +1,5 @@
+1.Find GCD for the given TWO numbers. (Read Console input, for loop and while loop).
+
+2.List prime number under 10.
+
+3.Check whether an alphabet is vowel or consonant.

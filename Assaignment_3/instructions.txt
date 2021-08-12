@@ -1,0 +1,7 @@
+1.Find ASCII value of a character.
+
+2.Program to count vowels, consonants, digits and spaces.
+
+3.Print 5 4 3 2 1 0 -1 -2 -3 -4 -5.
+
+4.Java program to print the Multiplication table of a number.

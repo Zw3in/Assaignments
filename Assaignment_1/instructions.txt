@@ -1,0 +1,5 @@
+1.Check the given number whether it is Prime or not.
+
+2.Print out the Fibonacci sequence with the given first term, second term and number of terms (1,1,2,3,5,8,13,21,34,55).
+
+3.Calculate the Factorial of the given number.
