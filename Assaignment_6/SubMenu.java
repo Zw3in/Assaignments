@@ -28,12 +28,12 @@ public class SubMenu extends JFrame
 
         menubar.setBounds(0, 0, 2000, 30);
         
-        File.setIcon(new ImageIcon("file_icon.png"));
-        New.setIcon(new ImageIcon("new_icon.png"));
-        Open.setIcon(new ImageIcon("open_icon.png"));
-        Save.setIcon(new ImageIcon("save_icon.png"));
-        Import.setIcon(new ImageIcon("import_icon.png"));
-        Exit.setIcon(new ImageIcon("exit_icon.png"));
+        File.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\file_icon.png"));
+        New.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\new_icon.png"));
+        Open.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\open_icon.png"));
+        Save.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\save_icon.png"));
+        Import.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\import_icon.png"));
+        Exit.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\exit_icon.png"));
 
         add(menubar);
         menubar.add(File);
