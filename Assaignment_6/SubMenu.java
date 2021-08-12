@@ -5,16 +5,29 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 import javax.swing.JSeparator;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class SubMenu extends JFrame
 {
     JMenuBar menubar = new JMenuBar();
     JMenu File = new JMenu("File");
+
     JMenuItem New = new JMenuItem("New");
+
     JMenuItem Open = new JMenuItem("Open");
+
     JMenuItem Save = new JMenuItem("Save");
+
     JMenuItem Import = new JMenuItem("Import");
+    JPopupMenu Import_Popup = new JPopupMenu();
+    JMenuItem Import_Pop_1 = new JMenuItem("Import newsfeed list...");
+    JMenuItem Import_Pop_2 = new JMenuItem("Import bookmarks...");
+    JMenuItem Import_Pop_3 = new JMenuItem("Import mail...");
+
     JMenuItem Exit = new JMenuItem("Exit");
 
     SubMenu()
@@ -37,6 +50,7 @@ public class SubMenu extends JFrame
 
         add(menubar);
         menubar.add(File);
+
         File.add(New);
         File.add(Open);
         File.add(Save);
@@ -44,7 +58,22 @@ public class SubMenu extends JFrame
         File.add(Import);
         File.add(new JSeparator());
         File.add(Exit);
-    }
+
+        add(Import_Popup);
+        Import_Popup.add(Import_Pop_1);
+        Import_Popup.add(Import_Pop_2);
+        Import_Popup.add(Import_Pop_3);
+
+        Import.addActionListener(new ActionListener() 
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                Import_Popup.show(Import, Import.getWidth(), 0);
+            }
+        });
+        
+    }// Constructor
     public static void main(String[] args) 
     {
         new SubMenu();
