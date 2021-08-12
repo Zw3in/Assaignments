@@ -5,11 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 import javax.swing.JSeparator;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class SubMenu extends JFrame
 {
@@ -22,8 +18,7 @@ public class SubMenu extends JFrame
 
     JMenuItem Save = new JMenuItem("Save");
 
-    JMenuItem Import = new JMenuItem("Import");
-    JPopupMenu Import_Popup = new JPopupMenu();
+    JMenu Import = new JMenu("Import");
     JMenuItem Import_Pop_1 = new JMenuItem("Import newsfeed list...");
     JMenuItem Import_Pop_2 = new JMenuItem("Import bookmarks...");
     JMenuItem Import_Pop_3 = new JMenuItem("Import mail...");
@@ -41,6 +36,7 @@ public class SubMenu extends JFrame
 
         menubar.setBounds(0, 0, 2000, 30);
         
+        // Icons
         File.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\file_icon.png"));
         New.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\new_icon.png"));
         Open.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\open_icon.png"));
@@ -48,9 +44,9 @@ public class SubMenu extends JFrame
         Import.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\import_icon.png"));
         Exit.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\exit_icon.png"));
 
+        // MenuBar >> File
         add(menubar);
         menubar.add(File);
-
         File.add(New);
         File.add(Open);
         File.add(Save);
@@ -59,20 +55,10 @@ public class SubMenu extends JFrame
         File.add(new JSeparator());
         File.add(Exit);
 
-        add(Import_Popup);
-        Import_Popup.add(Import_Pop_1);
-        Import_Popup.add(Import_Pop_2);
-        Import_Popup.add(Import_Pop_3);
-
-        Import.addActionListener(new ActionListener() 
-        {
-            @Override
-            public void actionPerformed(ActionEvent e) 
-            {
-                Import_Popup.show(Import, Import.getWidth(), 0);
-            }
-        });
-        
+        // PopupMenu
+        Import.add(Import_Pop_1);
+        Import.add(Import_Pop_2);
+        Import.add(Import_Pop_3);
     }// Constructor
     public static void main(String[] args) 
     {
