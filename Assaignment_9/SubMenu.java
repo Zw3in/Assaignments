@@ -1,4 +1,4 @@
-package Assaignments.Assaignment_6;
+package Assaignments.Assaignment_9;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -7,8 +7,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JSeparator;
 
-public class SubMenu extends JFrame
-{
+public class SubMenu extends JFrame {
     JMenuBar menubar = new JMenuBar();
     JMenu File = new JMenu("File");
 
@@ -25,8 +24,7 @@ public class SubMenu extends JFrame
 
     JMenuItem Exit = new JMenuItem("Exit");
 
-    SubMenu()
-    {
+    SubMenu() {
         setTitle("SubMenu");
         setSize(500, 500);
         setLocation(200, 200);
@@ -35,14 +33,14 @@ public class SubMenu extends JFrame
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         menubar.setBounds(0, 0, 2000, 30);
-        
+
         // Icons
-        File.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\file_icon.png"));
-        New.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\new_icon.png"));
-        Open.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\open_icon.png"));
-        Save.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\save_icon.png"));
-        Import.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\import_icon.png"));
-        Exit.setIcon(new ImageIcon("Assaignments\\Assaignment_6\\Resources\\exit_icon.png"));
+        File.setIcon(new ImageIcon("Assaignments\\Assaignment_9\\Resources\\file_icon.png"));
+        New.setIcon(new ImageIcon("Assaignments\\Assaignment_9\\Resources\\new_icon.png"));
+        Open.setIcon(new ImageIcon("Assaignments\\Assaignment_9\\Resources\\open_icon.png"));
+        Save.setIcon(new ImageIcon("Assaignments\\Assaignment_9\\Resources\\save_icon.png"));
+        Import.setIcon(new ImageIcon("Assaignments\\Assaignment_9\\Resources\\import_icon.png"));
+        Exit.setIcon(new ImageIcon("Assaignments\\Assaignment_9\\Resources\\exit_icon.png"));
 
         // MenuBar >> File
         add(menubar);
@@ -55,13 +53,13 @@ public class SubMenu extends JFrame
         File.add(new JSeparator());
         File.add(Exit);
 
-        // PopupMenu
+        // Import >> PopupMenu
         Import.add(Import_Pop_1);
         Import.add(Import_Pop_2);
         Import.add(Import_Pop_3);
     }// Constructor
-    public static void main(String[] args) 
-    {
+
+    public static void main(String[] args) {
         new SubMenu();
     }
 }

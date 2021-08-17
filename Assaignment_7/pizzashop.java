@@ -1,4 +1,4 @@
-package Assaignments.Assaignment_6;
+package Assaignments.Assaignment_7;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,10 +19,9 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class pizzashop extends JFrame implements ActionListener
-{
+public class pizzashop extends JFrame implements ActionListener {
     JLabel Welcome = new JLabel("Welcome to Home Style Pizza Shop");
-    
+
     double Toppings_Price = 1.50;
     JPanel Toppings = new JPanel();
     JLabel Toppings_Label = new JLabel("  Each Topping: $" + Toppings_Price);
@@ -59,8 +58,7 @@ public class pizzashop extends JFrame implements ActionListener
 
     Color custom_Orange = new Color(255, 80, 0);
 
-    pizzashop()
-    {
+    pizzashop() {
         this.setTitle("Pizza Shop");
         this.setSize(600, 410);
         this.setLocation(500, 200);
@@ -96,7 +94,7 @@ public class pizzashop extends JFrame implements ActionListener
 
         Toppings.add(Sausage);
 
-        //Pizza Size
+        // Pizza Size
         Pizza_Size.setBounds(250, 60, 105, 100);
         Pizza_Size.setBorder(BorderFactory.createLineBorder(custom_Orange));
         Pizza_Size.setLayout(new BoxLayout(Pizza_Size, BoxLayout.Y_AXIS));
@@ -153,48 +151,80 @@ public class pizzashop extends JFrame implements ActionListener
     }
 
     @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        double Total_Cost = 0; 
+    public void actionPerformed(ActionEvent e) {
+        double Total_Cost = 0;
 
         String Pizza_Type_Output = "";
-        if (Thin_Crust.isSelected())      { Pizza_Type_Output = "Thin Crust";   }
-        if (Medium_Crust.isSelected())    { Pizza_Type_Output = "Medium Crust"; }
-        if (Pan.isSelected())             { Pizza_Type_Output = "Pan";          }
+        if (Thin_Crust.isSelected()) {
+            Pizza_Type_Output = "Thin Crust";
+        }
+        if (Medium_Crust.isSelected()) {
+            Pizza_Type_Output = "Medium Crust";
+        }
+        if (Pan.isSelected()) {
+            Pizza_Type_Output = "Pan";
+        }
 
         String Pizza_Size_Output = "";
-        if (Small.isSelected())           { Pizza_Size_Output = "Small";   Total_Cost += Small_Price;  }
-        if (Medium.isSelected())          { Pizza_Size_Output = "Medium";  Total_Cost += Medium_Price; }
-        if (Large.isSelected())           { Pizza_Size_Output = "Large";   Total_Cost += Large_Price;  }
+        if (Small.isSelected()) {
+            Pizza_Size_Output = "Small";
+            Total_Cost += Small_Price;
+        }
+        if (Medium.isSelected()) {
+            Pizza_Size_Output = "Medium";
+            Total_Cost += Medium_Price;
+        }
+        if (Large.isSelected()) {
+            Pizza_Size_Output = "Large";
+            Total_Cost += Large_Price;
+        }
 
         ArrayList<String> Toppings_List = new ArrayList<String>();
-        if (Tomato.isSelected())          { Toppings_List.add("Tomato");       Total_Cost += Toppings_Price; }
-        if (Green_Pepper.isSelected())    { Toppings_List.add("Green Pepper"); Total_Cost += Toppings_Price; }
-        if (Black_Olives.isSelected())    { Toppings_List.add("Black Olives"); Total_Cost += Toppings_Price; }
-        if (Mushrooms.isSelected())       { Toppings_List.add("Mushrooms");    Total_Cost += Toppings_Price; }
-        if (Extra_Cheese.isSelected())    { Toppings_List.add("Extra Cheese"); Total_Cost += Toppings_Price; }
-        if (Pepperoni.isSelected())       { Toppings_List.add("Pepperoni");    Total_Cost += Toppings_Price; }
-        if (Sausage.isSelected())         { Toppings_List.add("Sausage");      Total_Cost += Toppings_Price; }
+        if (Tomato.isSelected()) {
+            Toppings_List.add("Tomato");
+            Total_Cost += Toppings_Price;
+        }
+        if (Green_Pepper.isSelected()) {
+            Toppings_List.add("Green Pepper");
+            Total_Cost += Toppings_Price;
+        }
+        if (Black_Olives.isSelected()) {
+            Toppings_List.add("Black Olives");
+            Total_Cost += Toppings_Price;
+        }
+        if (Mushrooms.isSelected()) {
+            Toppings_List.add("Mushrooms");
+            Total_Cost += Toppings_Price;
+        }
+        if (Extra_Cheese.isSelected()) {
+            Toppings_List.add("Extra Cheese");
+            Total_Cost += Toppings_Price;
+        }
+        if (Pepperoni.isSelected()) {
+            Toppings_List.add("Pepperoni");
+            Total_Cost += Toppings_Price;
+        }
+        if (Sausage.isSelected()) {
+            Toppings_List.add("Sausage");
+            Total_Cost += Toppings_Price;
+        }
 
-        Checkout.setText(" Pizza type: " + Pizza_Type_Output + "\n Pizza size: " + Pizza_Size_Output + "\n Toppings: " + ArrtoString(Toppings_List) + "\n Amount Due: $" + Total_Cost);
+        Checkout.setText(" Pizza type: " + Pizza_Type_Output + "\n Pizza size: " + Pizza_Size_Output + "\n Toppings: "
+                + ArrtoString(Toppings_List) + "\n Amount Due: $" + Total_Cost);
     }
 
-    private String ArrtoString(ArrayList<String> arr)
-    {
+    private String ArrtoString(ArrayList<String> arr) {
         String output = "";
-        if (arr.size() > 0)
-        {
+        if (arr.size() > 0) {
             output += arr.get(0);
-            for (int x = 1; x < arr.size(); x++)
-            {
+            for (int x = 1; x < arr.size(); x++) {
                 output += ", " + arr.get(x);
             }
         }
         return output;
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         new pizzashop();
     }
 }

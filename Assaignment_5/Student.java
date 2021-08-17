@@ -4,19 +4,20 @@ public class Student {
     int ID;
     String name;
     double score;
-    Student(int ID, String name, double score){
+
+    Student(int ID, String name, double score) {
         this.ID = ID;
         this.name = name;
         this.score = score;
     }
 
-    Student(int ID, String name){
+    Student(int ID, String name) {
         this.ID = ID;
         this.name = name;
         this.score = -1.0;
     }
-    
-    public Student withScore(double score){
+
+    public Student withScore(double score) {
         return new Student(this.ID, this.name, score);
     }
 
@@ -46,7 +47,9 @@ public class Student {
 
     @Override
     public String toString() {
-        if(score == -1) { return ("(" + ID + ", " + name + ", no score)"); }
+        if (score == -1) {
+            return ("(" + ID + ", " + name + ", no score)");
+        }
         return ("(" + ID + ", " + name + ", " + score + ")");
     }
 }
