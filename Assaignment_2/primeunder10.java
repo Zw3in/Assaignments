@@ -13,24 +13,23 @@ public class primeunder10 {
 		
 	}// main
 	
-	static boolean primecheck(int x) {
-		
-		Boolean primecheck = true;
-		if(x <= 0) { // for negative numbers and 0
-			primecheck = false;
-		}
-		else if(x <= 2) { // for 1 and 2 sine they can't be checked, (at least not by simple scripts)
-		}
-		else {
-			for(int y = 2; y <= Math.sqrt(x); y++) { // probably the most efficient and reliable way to check if a number is prime
-				if(x%y == 0) {
-					primecheck = false;
-					break;
-		
+	static boolean primecheck(int n) {
+		if (n == 2) {
+			return true;
+		} // for 2 since it's the only even prime and therefore can't be checked by this
+			// script.
+		if (n % 2 == 0 || n <= 1) {
+			return false;
+		} // razor off negative numbers, 0 and 1 and even numbers
+		else { // *probably* the most efficient and reliable way to check if a number is prime
+				// (probably not the most efficient tbh)
+			for (int y = 3; y < Math.sqrt(n); y += 2) {
+				if (n % y == 0) {
+					return false;
 				}
 			}
 		}
-		return(primecheck);
+		return true;
 	}// primecheck
 
 }// class

@@ -19,11 +19,9 @@ public class GCDfor2 {
 			n = a;
 		}
 		for(i = n; i > 0; i--) {
-			if(a%i == 0) {
-				if(b%i == 0) {
-					System.out.println("Greatest Common Denominator between " + a + " and " + b + " is " + i);
-					break;
-				}
+			if(a%i == 0 && b%i == 0) {
+				System.out.println("Greatest Common Denominator between " + a + " and " + b + " is " + i);
+				break;
 			}
 		}
 	}// main method
